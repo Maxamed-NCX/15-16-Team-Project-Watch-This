@@ -1,0 +1,36 @@
+<div class="edit-article">
+  <article>
+    <a href="/dashboard"> &larr; Back to dashboard</a>
+    <h2>
+      Edit Watchlist
+    </h2>
+    <form class="edit-watchlist-form">
+      <div>
+        <input name="watchlist-title" type="text" value="{{watchlist.title}}" />
+      </div>
+      <div>
+        <a href="/watchlists/{{watchlist.id}}">{{watchlist.shows.length}} {{format_plural "show" watchlist.shows.length}}</a>
+      </div>
+      <button type="submit">Save watchlist</button>
+      <button type="button" class="delete-watchlists-btn">Delete watchlist</button>
+    </form>
+  </article>
+  
+  <form class="shows-form">
+    <h2>Add your show!</h2>
+    <div>
+      <textarea name="shows-body"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">add show</button>
+    </div>
+  </form>
+</div>
+
+
+{{> shows watchlist.shows}}
+
+<script src="/javascript/edit-watchlist.js"></script>
+<script src="/javascript/delete-watchlist.js"></script>
+<script src="/javascript/shows.js"></script>

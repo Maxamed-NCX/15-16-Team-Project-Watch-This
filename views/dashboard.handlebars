@@ -1,0 +1,28 @@
+<section>
+  
+
+  <form class="new-watchlist-form">
+    <div class="watchlist-form">
+      <h3>Create New Watchlist</h3>
+      <label for="watchlist-title">Title</label>
+      <input type="text" id="watchlist-title" name="watchlist-title" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+
+{{#if watchlists.length}}
+<section>
+  <h2 class="your-watchlist-label"> Your Watchlists</h2>
+  <ol>
+    {{#each watchlists as |watchlist|}}
+    <li class="watchlist-wrapper">
+      {{> watchList-info watchlist}}
+      <a href="/dashboard/edit/{{watchlist.id}}" class="edit-link">Edit watchlist</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-watchlist.js"></script>

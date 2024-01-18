@@ -1,0 +1,25 @@
+<div class="single-title">
+{{> watchList-info watchlist}}
+</div>
+
+
+{{> shows watchlist.shows}}
+
+{{#if loggedIn}}
+<form class="reviews-form">
+  <h2 class="addreviewlabel"> Add your own review!</h2>
+  <div class="reviewtext-wrapper">
+    <textarea name="reviews-body"></textarea>
+  </div>
+
+  <div class="review-submit">
+    <button type="submit">Add Review</button>
+  </div>
+</form>
+{{/if}}
+
+{{> reviews watchlist.reviews}}
+
+{{#if loggedIn}}
+<script src="/javascript/reviews.js"></script>
+{{/if}}
